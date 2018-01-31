@@ -55,7 +55,7 @@ document.onload=function(){
 
 
 
-		$(".buttons").on("click",function(){
+		$(document).on("click", ".buttons", function(){
 				// loadBtn();
 				event.preventDefault();
 				console.log("clicked");
