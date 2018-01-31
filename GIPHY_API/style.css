@@ -1,0 +1,36 @@
+.container{
+padding:15px;
+background-color: #afed97;
+}
+h1{
+
+}
+.main_content{
+	margin:0 auto;
+	padding:0 auto;
+	height:150px;
+	border-width: 5px;
+	border-color: #759ad6;
+
+}
+.main_middle{
+
+}
+.container{
+
+
+}
+.empty_row {
+	height:50px;
+
+}
+#buttons{
+	font-weight:7;
+	background-color:blue;
+	
+}
+.second_row{
+	margin:0 auto;
+	display:inline-block;
+
+}
