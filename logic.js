@@ -30,18 +30,39 @@ load_buttons();
 	        	var search_results = response.data;
 	        	for (var i=0;i< element_itterator.length;i++)
 
-	        		$(`.${element_itterator[i]}`).html("<img src="
+	        		$(`.${element_itterator[i]}`).html("<img src=")
 	        		$(`.${element_itterator[i]}`).append(search_results)
 	        })
 	});
-	$("#search").on("click", function(){
-		console.log("got in")
-		var search_element = $("#form").val();
-		var new_button = $("<button>");
-		new_button.attr("button-name",search_element)
-		new_button.text(search_element);
+	// $("#search").on("click", function(){
+	// 	console.log("got in")
+	// 	var search_element = $("#form").val();
+	// 	var new_button = $("<button>");
+	// 	new_button.attr("button-name",search_element)
+	// 	new_button.text(search_element);
 
-		$("#buttons").append(new_button);
+	// 	$("#buttons").append(new_button);
+	// });
 
-	});
 
+
+
+	$("#search").on("click",function(event){
+			console.log("clicked");
+            var topic = $("#form").val();
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+            topic + "&api_key=dc6zaTOxFJmzC&limit=10";
+              $.ajax({
+              url: queryURL,
+              method: "GET"
+            })
+            .done(function(response){
+                console.log(response);
+                for (var i = 0; i < response.data.length; i++) {
+                    var newImg = $('<img>');
+                    newImg.addClass('gif');
+                    newImg.attr('src', response.data[i].images.fixed_height.url);
+                    $('.gifHolder').prepend(newImg);
+                }
+            })
+    });
