@@ -35,7 +35,7 @@ document.onload=function(){
 	}
 	loadBtn();
 	var resetGifs = function(){
-		
+
 	}
 
 	// 	$("#create_button").on("click",function(event){
@@ -46,7 +46,8 @@ document.onload=function(){
 	// 		new_button.addClass('buttons');
 	// 		$("#buttons").append(new_button);
 	// });
-		$("#create_button").on("click", function(){
+		$("#create_button").on("click", function(event){
+			event.preventDefault();
 	        var button_attr = $('#form').val();
 	    	topics.push(button_attr);
 	    	loadBtn();
@@ -55,7 +56,7 @@ document.onload=function(){
 
 
 		$(".buttons").on("click",function(){
-				loadBtn();
+				// loadBtn();
 				event.preventDefault();
 				console.log("clicked");
 				var emptyGif = $(".col-md-5")
